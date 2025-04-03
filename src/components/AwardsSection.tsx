@@ -1,9 +1,17 @@
-import React from "react";
+import React, { type ReactNode } from "react";
 import { awards } from "@/lib/data";
 import { Trophy } from "lucide-react";
 import MotionWrapper from "./MotionWrapper";
 import { GlassCard } from "./ui/glass-card";
 import { motion } from "framer-motion";
+
+type AwardType = {
+  name: string;          
+  date: ReactNode;       
+  issuer: string;        
+  position: string;      
+  type: string;          
+}
 
 export default function AwardsSection() {
   return (
@@ -14,12 +22,12 @@ export default function AwardsSection() {
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
           <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
-            🏆 Awards
+            🏆 Награды и достижения
           </h2>
         </MotionWrapper>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {awards.map((award, index) => (
+          {awards.map((award: AwardType, index: number) => (
             <MotionWrapper key={award.name + award.date} delay={index * 0.1}>
               <GlassCard className="p-4 dark:border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 flex flex-col h-full">
                 <div className="flex items-center mb-2">
@@ -51,8 +59,8 @@ export default function AwardsSection() {
                     className="text-xs text-muted-foreground/80 bg-background/50 px-2 py-1 rounded-md w-fit"
                     whileHover={{ scale: 1.05 }}
                   >
-                    {award.type === "International" ? "🌎 " : "🇮🇳 "}
-                    {award.type}
+                    {award.type === "International" ? "🌎 Международная" : "🇷🇺 Национальная"}
+                    {/* {award.type} */}
                   </motion.span>
                 </div>
               </GlassCard>

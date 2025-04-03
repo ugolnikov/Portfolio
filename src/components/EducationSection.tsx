@@ -3,6 +3,16 @@ import TimelineItem from "./TimelineItem";
 import { Award } from "lucide-react";
 import MotionWrapper from "./MotionWrapper";
 import { motion } from "framer-motion";
+import type { ReactNode } from "react";
+
+// Тип для образования
+type Education = {
+  institution: string;        // Название учебного заведения
+  degree: string;            // Полученная степень/специальность
+  period: ReactNode;         // Период обучения (может быть JSX)
+  location: string;          // Местоположение
+  achievements?: string[];   // Достижения (необязательное поле)
+};
 
 export default function EducationSection() {
   return (
@@ -13,12 +23,12 @@ export default function EducationSection() {
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
           <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
-            🎓 Education
+            🎓 Образование
           </h2>
         </MotionWrapper>
 
         <div className="mb-8">
-          {education.map((edu, index) => (
+          {education.map((edu: Education, index: number) => (
             <TimelineItem
               key={edu.institution}
               title={`🎓 ${edu.degree}`}
@@ -31,6 +41,7 @@ export default function EducationSection() {
                 📍 {edu.location}
               </p>
 
+              {/* Блок достижений - показывается только если они есть */}
               {edu.achievements && edu.achievements.length > 0 && (
                 <motion.div
                   className="mt-3 p-4 bg-background/80 backdrop-blur-sm backdrop-filter rounded-lg border border-purple-500/20 dark:bg-card/10 dark:border-purple-500/10 shadow-sm"
@@ -44,7 +55,7 @@ export default function EducationSection() {
                       <Award className="h-4 w-4 text-purple-500" />
                     </div>
                     <h4 className="text-sm font-medium">
-                      ✨ Achievements & Activities
+                      ✨ Достижения и активность
                     </h4>
                   </div>
                   <ul className="list-none ml-4 space-y-2 text-sm">

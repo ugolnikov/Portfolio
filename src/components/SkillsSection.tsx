@@ -1,8 +1,11 @@
+// components/SkillsSection.tsx
 import React from "react";
 import { skills } from "@/lib/data";
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
 import { GlassCard } from "./ui/glass-card";
+
+type SkillType = string;
 
 function SkillTag({ skill, index }: { skill: string; index: number }) {
   return (
@@ -45,6 +48,17 @@ const skillCategoryVariants = {
 };
 
 export default function SkillsSection() {
+  
+  // Деструктурируем с русскими названиями для удобства
+  const {
+    programming_languages: programmingLanguages,
+    frontend_development: frontend,
+    backend_development: backend,
+    database_and_storage: database,
+    cloud_and_devops: devops,
+    tools_and_services: toolsAndServices
+  } = skills;
+
   return (
     <section
       id="skills"
@@ -53,7 +67,7 @@ export default function SkillsSection() {
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
           <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
-            🛠️ Skills
+            🛠️ Навыки и технологии
           </h2>
         </MotionWrapper>
 
@@ -67,11 +81,11 @@ export default function SkillsSection() {
           <motion.div variants={skillCategoryVariants}>
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">💻</span> Programming Languages
+                <span className="mr-2 text-xl">💻</span> Языки программирования
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                {skills.programmingLanguages.map((skill, index) => (
-                  <SkillTag key={skill} skill={skill} index={index} />
+                {programmingLanguages.map((skill: SkillType, index: number) => (
+                  <SkillTag key={`язык-${index}`} skill={skill} index={index} />
                 ))}
               </div>
             </GlassCard>
@@ -80,11 +94,11 @@ export default function SkillsSection() {
           <motion.div variants={skillCategoryVariants}>
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">🎨</span> Frontend Development
+                <span className="mr-2 text-xl">🎨</span> Фронтенд-разработка
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                {skills.frontendDevelopment.map((skill, index) => (
-                  <SkillTag key={skill} skill={skill} index={index} />
+                {frontend.map((skill: SkillType, index: number) => (
+                  <SkillTag key={`фронт-${index}`} skill={skill} index={index} />
                 ))}
               </div>
             </GlassCard>
@@ -93,11 +107,11 @@ export default function SkillsSection() {
           <motion.div variants={skillCategoryVariants}>
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">⚙️</span> Backend Development
+                <span className="mr-2 text-xl">⚙️</span> Бэкенд-разработка
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                {skills.backendDevelopment.map((skill, index) => (
-                  <SkillTag key={skill} skill={skill} index={index} />
+                {backend.map((skill: SkillType, index: number) => (
+                  <SkillTag key={`бэк-${index}`} skill={skill} index={index} />
                 ))}
               </div>
             </GlassCard>
@@ -106,11 +120,11 @@ export default function SkillsSection() {
           <motion.div variants={skillCategoryVariants}>
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">🗄️</span> Database & Storage
+                <span className="mr-2 text-xl">🗄️</span> Базы данных и хранилища
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                {skills.databaseAndStorage.map((skill, index) => (
-                  <SkillTag key={skill} skill={skill} index={index} />
+                {database.map((skill: SkillType, index: number) => (
+                  <SkillTag key={`бд-${index}`} skill={skill} index={index} />
                 ))}
               </div>
             </GlassCard>
@@ -119,11 +133,11 @@ export default function SkillsSection() {
           <motion.div variants={skillCategoryVariants}>
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">☁️</span> Cloud & DevOps
+                <span className="mr-2 text-xl">☁️</span> Облачные технологии и DevOps
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                {skills.cloudAndDevOps.map((skill, index) => (
-                  <SkillTag key={skill} skill={skill} index={index} />
+                {devops.map((skill: SkillType, index: number) => (
+                  <SkillTag key={`облако-${index}`} skill={skill} index={index} />
                 ))}
               </div>
             </GlassCard>
@@ -132,11 +146,11 @@ export default function SkillsSection() {
           <motion.div variants={skillCategoryVariants}>
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">🧰</span> Tools & Services
+                <span className="mr-2 text-xl">🧰</span> Инструменты и сервисы
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                {skills.toolsAndServices.map((skill, index) => (
-                  <SkillTag key={skill} skill={skill} index={index} />
+                {toolsAndServices.map((skill: SkillType, index: number) => (
+                  <SkillTag key={`инструмент-${index}`} skill={skill} index={index} />
                 ))}
               </div>
             </GlassCard>

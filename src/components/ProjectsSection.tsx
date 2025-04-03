@@ -12,18 +12,24 @@ import { GlassCard } from "./ui/glass-card";
 import MotionWrapper from "./MotionWrapper";
 import { motion } from "framer-motion";
 
+type ProjectType = {
+  title: string,
+  description: string[],
+  github: string
+}
+
 export default function ProjectsSection() {
   return (
     <section id="projects" className="py-12 relative">
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
           <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
-            🚀 Projects
+            🚀 Пэт-Проекты
           </h2>
         </MotionWrapper>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
+          {projects.map((project: ProjectType, index: number) => (
             <MotionWrapper key={project.title} delay={index * 0.2}>
               <GlassCard className="overflow-hidden dark:border-purple-500/10 h-full flex flex-col" >
                 <CardHeader className="bg-gradient-to-r from-purple-500/5 to-pink-500/5">
@@ -31,9 +37,9 @@ export default function ProjectsSection() {
                     {project.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="flex-grow">
+                <CardContent className="flex-grow flex flex-col content-center justify-center items-left">
                   <ul className="list-disc ml-4 space-y-1 text-sm group-hover:space-y-2 transition-all duration-300">
-                    {project.description.map((desc, i) => (
+                    {project.description.map((desc: string, i: number) => (
                       <motion.li
                         key={i}
                         className="text-muted-foreground"
@@ -57,7 +63,7 @@ export default function ProjectsSection() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Github className="h-4 w-4 mr-2 group-hover/link:rotate-12 transition-transform duration-300" />
-                    View on GitHub 🔗
+                    Перейти на GitHub 🔗
                   </motion.a>
                 </CardFooter>
               </GlassCard>
