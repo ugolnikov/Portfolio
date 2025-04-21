@@ -14,7 +14,6 @@ export default function GlassHeader() {
     { id: "experience", emoji: "💼", text: "Опыт" },
     { id: "skills", emoji: "🛠️", text: "Навыки" },
     { id: "projects", emoji: "🚀", text: "Проекты" },
-    { id: "awards", emoji: "🏆", text: "Награды" },
     { id: "education", emoji: "🎓", text: "Образование" }
   ];
 
