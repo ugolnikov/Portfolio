@@ -1,50 +1,31 @@
-import { supabase } from "./supabase"
+import local from './local-data.json'
 
-
-
-async function fetchDBInfo(table: string, first: boolean = true) {
-  const { data, error } = await supabase.from(table).select("*");
-  
-  if (error) {
-    console.error("Ошибка при получении ", table, ":", error);
-    return null;
-  }
-  
-  return first ? data?.[0] ?? null : data;
+type Skills = {
+  programming_languages: string[]
+  frontend_development: string[]
+  backend_development: string[]
+  database_and_storage: string[]
+  cloud_and_devops: string[]
+  tools_and_services: string[]
 }
 
-async function fetchSkills() {
-  const { data, error } = await supabase.from('skills').select("*");
-  
-  if (error) {
-    console.error("Ошибка при загрузке навыков:", error);
-    return {
-      programming_languages: [],
-      frontend_development: [],
-      backend_development: [],
-      database_and_storage: [],
-      cloud_and_devops: [],
-      tools_and_services: []
-    };
-  }
-  
-  return data?.[0] || {
-    programming_languages: [],
-    frontend_development: [],
-    backend_development: [],
-    database_and_storage: [],
-    cloud_and_devops: [],
-    tools_and_services: []
-  };
-}
+type PersonalInfo = Record<string, unknown>
+type WorkExperience = Record<string, unknown>[]
+type Education = Record<string, unknown>[]
+type Project = Record<string, unknown>[]
+type Award = Record<string, unknown>[]
 
-
-
-const awards_get = await fetchDBInfo('awards', false)
-
-export const personalInfo = await fetchDBInfo('personalinfo');
-export const workExperience = await fetchDBInfo('work_experience', false)
-export const education = await fetchDBInfo('education', false)
-export const skills = await fetchSkills()
-export const projects = await fetchDBInfo('projects', false)
-export const awards = awards_get
+export const personalInfo = (local as any).personalInfo as PersonalInfo
+export const workExperience = ([...((local as any).workExperience ?? [])]
+  .sort((a: any, b: any) => (Number(b?.id ?? 0)) - (Number(a?.id ?? 0)))) as WorkExperience
+export const education = (local as any).education as Education
+export const skills = ((local as any).skills ?? {
+  programming_languages: [],
+  frontend_development: [],
+  backend_development: [],
+  database_and_storage: [],
+  cloud_and_devops: [],
+  tools_and_services: []
+}) as Skills
+export const projects = (local as any).projects as Project
+export const awards = (local as any).awards as Award

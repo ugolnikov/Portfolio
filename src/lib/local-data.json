@@ -1,0 +1,197 @@
+{
+  "personalInfo": {
+    "id": 1,
+    "name": "Даниил Угольников",
+    "location": "Пермь",
+    "email": "hacker.2282005@mail.ru",
+    "github": "https://github.com/ugolnikov",
+    "hh_ru": "https://perm.hh.ru/resume/53ffc191ff0bc8fa6a0039ed1f4b4642534e63"
+  },
+  "workExperience": [
+    {
+      "id": 1,
+      "company": "ООО \"Амадо\"",
+      "location": "Пермь",
+      "position": "Практика",
+      "period": "Декабрь 2024 - Январь 2025",
+      "achievements": [
+        "Изучение Laravel",
+        "Попытки разработки полного стэки приложения"
+      ]
+    },
+    {
+      "id": 2,
+      "company": "ООО \"Амадо\"",
+      "location": "Пермь",
+      "position": "Практика",
+      "period": "Март 2025 - Апрель 2025",
+      "achievements": [
+        "Разработка на React",
+        "Изучение Typescript, Astro"
+      ]
+    },
+    {
+      "id": 3,
+      "company": "ООО УК \"ГРАФИТ\"",
+      "location": "Удаленно",
+      "position": "Веб - разработчик",
+      "period": "Апрель 2025 - Октябрь 2025",
+      "achievements": [
+        "Поддержка веб - приложения",
+        "Разработка на PHP",
+        "Самостоятельное изучение фронта, React и т.д."
+      ]
+    }
+    
+  ],
+  "education": [
+    {
+      "id": 1,
+      "institution": "ГБПОУ \"Пермский краевой колледж \"ОНИКС\"",
+      "location": "Пермь, Россия",
+      "degree": "Веб-разработчик",
+      "period": "2021 - 2025",
+      "achievements": [
+        "Освоил навыки разработки на PHP",
+        "Прошел практику в ООО 'Амадо'",
+        "Работал над различными проектами и приложениями",
+        "Изучил как работают базы данных и способы их применения"
+      ]
+    }
+  ],
+  "skills": {
+    "id": 1,
+    "programming_languages": [
+      "PHP",
+      "TypeScript",
+      "JavaScript",
+      "SQL"
+    ],
+    "frontend_development": [
+      "Astro",
+      "Next.js",
+      "React.js",
+      "Vue.js",
+      "Shadcn UI",
+      "Tailwind CSS",
+      "HTML",
+      "CSS"
+    ],
+    "backend_development": [
+      "Laravel",
+      "PHP",
+      "REST API",
+      "PostMan"
+    ],
+    "database_and_storage": [
+      "MongoDB",
+      "PostgreSQL",
+      "MySQL",
+      "PHPMyAdmin"
+    ],
+    "cloud_and_devops": [
+      "Supabase",
+      "Vercel",
+      "Netlify",
+      "Railway"
+    ],
+    "tools_and_services": [
+      "Axios",
+      "Figma",
+      "Photoshop",
+      "Linux"
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Маркетплейс ruMarket",
+      "github": "https://github.com/ugolnikov/next-js-ruMarket",
+      "description": [
+        "Full-stack маркетплейс: Next.js + Next.js API ",
+        "Современная база данных: Supabase",
+        "Красивый интерфейс: TailwindCSS",
+        "Возможность будущего обновления"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Портфолио",
+      "github": "https://github.com/ugolnikov/Portfolio",
+      "description": [
+        "Frontend: React, Astro, Tailwind CSS",
+        "DB: Supabase"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Наработка Next.js + Laravel",
+      "github": "https://github.com/ugolnikov/Laravel-Api-for-Next-Laravel",
+      "description": [
+        "Frontend - Next.js",
+        "Backend - Laravel",
+        "Деплой на Railway",
+        "Laravel Sanctum",
+        "PostgreSQL"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "id": 1,
+      "name": "IEEE YESIST12 Hackathon",
+      "issuer": "IEEE",
+      "date": "Sep 2022",
+      "type": "International",
+      "position": "Second Place"
+    },
+    {
+      "id": 2,
+      "name": "Prodigi Cognizant Hackathon",
+      "issuer": "Cognizant",
+      "date": "Feb 2023",
+      "type": "National",
+      "position": "Second Runner-up"
+    },
+    {
+      "id": 3,
+      "name": "Cisco Thingqbator Hackathon",
+      "issuer": "Cisco",
+      "date": "Jan 2023",
+      "type": "National",
+      "position": "First Runner-up"
+    },
+    {
+      "id": 4,
+      "name": "Innovators Day",
+      "issuer": "Sri Manakula Vinayagar Engineering College",
+      "date": "Sep 2022",
+      "type": "National",
+      "position": "First Prize"
+    },
+    {
+      "id": 5,
+      "name": "KG Hackfest'22",
+      "issuer": "KGiSL Institute of Technology",
+      "date": "Sep 2022",
+      "type": "National",
+      "position": "Second Prize"
+    },
+    {
+      "id": 6,
+      "name": "Innohacks'22",
+      "issuer": "Innogeeks, KIET Group of Institutions",
+      "date": "May 2022",
+      "type": "National",
+      "position": "Second Runner-up"
+    },
+    {
+      "id": 7,
+      "name": "Hack @ SKCET",
+      "issuer": "Hackclub SKCET, SKCET, Coimbatore",
+      "date": "Feb 2022",
+      "type": "National",
+      "position": "Most Impactful Hack"
+    }
+  ]
+}

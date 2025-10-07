@@ -13,11 +13,17 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "export:data": "node ./scripts/export-supabase.mjs"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.3",
     "@radix-ui/react-slot": "^1.1.2",
+    "@sentry/astro": "^10.18.0",
+    "@spotlightjs/astro": "^3.2.6",
     "@supabase/supabase-js": "^2.49.3",
     "@tailwindcss/vite": "^4.0.14",
     "@types/react": "^19.0.12",
