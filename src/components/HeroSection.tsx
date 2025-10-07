@@ -40,7 +40,7 @@ export default function HeroSection() {
               className="text-4xl font-bold mb-2"
               variants={childVariants}
             >
-              {personalInfo.name}{" "}
+              {String(personalInfo.name)}{" "}
               <span className="inline-block animate-pulse">🟣</span>
             </motion.h1>
 
@@ -61,7 +61,9 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
               >
                 <MapPin className="h-4 w-4 mr-2" />
-                📍 {personalInfo.location}
+                <span>
+                  📍 {String(personalInfo.location)}
+                </span>
               </motion.div>
 
               <motion.a
@@ -71,11 +73,11 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
               >
                 <Mail className="h-4 w-4 mr-2" />
-                ✉️ {personalInfo.email}
+                ✉️ {String(personalInfo.email)}
               </motion.a>
 
               <motion.a
-                href={personalInfo.github}
+                href={String(personalInfo.github)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -87,7 +89,7 @@ export default function HeroSection() {
               </motion.a>
 
               <motion.a
-                href={personalInfo.hh_ru}
+                href={String(personalInfo.hh_ru)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
