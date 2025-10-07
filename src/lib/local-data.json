@@ -65,7 +65,8 @@
       "PHP",
       "TypeScript",
       "JavaScript",
-      "SQL"
+      "SQL",
+      "Go"
     ],
     "frontend_development": [
       "Astro",
