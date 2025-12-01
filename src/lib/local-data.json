@@ -106,6 +106,19 @@
   "projects": [
     {
       "id": 1,
+      "title": "Faceit CS2 Statistics",
+      "github": "https://github.com/ugolnikov/Go-FaceitStats",
+      "description": [
+        "Frontend: Next.js, TypeScript, Tailwind CSS",
+        "API: Faceit Data API + Steam Web API",
+        "Поиск игрока по никнейму Faceit",
+        "Поиск по Steam ID или ссылке",
+        "Отображение ELO, уровня, winrate, K/D, HS%",
+        "Расширенная статистика по сегментам"
+      ]
+    },
+    {
+      "id": 2,
       "title": "Маркетплейс ruMarket",
       "github": "https://github.com/ugolnikov/next-js-ruMarket",
       "description": [
@@ -125,7 +138,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": 4,
       "title": "Наработка Next.js + Laravel",
       "github": "https://github.com/ugolnikov/Laravel-Api-for-Next-Laravel",
       "description": [
